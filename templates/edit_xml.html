@@ -1,0 +1,64 @@
+<!-- edit_xml.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Conferência Fiscal - XML</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="header">
+        <h3>Relatório de Conferência Fiscal - XML</h3>
+        <form id="excelForm" method="POST" action="/generate-excel-report">
+            <input type="hidden" name="all_files_data" id="all_files_data" value='{{ all_files_data | tojson | safe }}'>
+            <button type="submit">Gerar Relatório Excel</button>
+        </form>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Código Item(cProd)</th>
+                <th>Descrição SKU(xProd)</th>
+                <th>CFOP(CFOP)</th>
+                <th>Unidade de Medida(uCom)</th>
+                <th>Quantidade(qCom)</th>
+                <th>NF Ref. Entrada(InfAprod)</th>
+                <th>NF Retorno/Entrada(nNF)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for file_data in all_files_data %}
+                {% for produto in file_data['produtos'] %}
+                    <tr>
+                        <td>{{ produto['cProd'] }}</td>
+                        <td>{{ produto['xProd'] }}</td>
+                        <td>{{ produto['CFOP'] }}</td>
+                        <td>{{ produto['uCom'] }}</td>
+                        <td>{{ produto['qCom'] | int }}</td>
+                        <td>{{ produto['infAdProd'] }}</td>
+                        <td>{{ file_data['nNF'] }}</td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <footer class="main-footer">
+        <div class="container-fluid">
+            <div class="corporing">
+                <p>
+                    <span id="ano-atual-edit"></span> © Intermarítima Portos e Logística S/A.
+                    Todos os direitos reservados. - Desenvolvido por Abel Silva Brandão
+                </p>
+            </div>
+            <div class="versao">
+                <p><span class="versao_site">Versão: 1.0</span></p>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>   
+</body>
+</html>

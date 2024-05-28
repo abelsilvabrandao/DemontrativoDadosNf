@@ -1,0 +1,197 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.container img {
+    display: block;
+    width: 150px;
+    margin: 0 auto 50px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 12px;
+    margin-bottom: 20px;
+
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.description {
+    margin: 20px auto;
+    width: 80%;
+    text-align: justify;
+    font-size: 11px;
+    color: #333;
+}
+
+.description{
+    margin: 100px auto 50px;
+}
+
+/* Ocultando o campo de arquivo padrão */
+input[type="file"] {
+    display: none;
+}
+
+/* Estilo do botão */
+label {
+    display: inline-block;
+    background-color: #8e9695;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+label:hover {
+    background-color: #006c5b;
+}
+
+/* Estilo específico para o campo de arquivo */
+#file-label {
+    display: inline-block;
+    position: relative;
+    margin: 20px 0;
+    border: 2px solid #006c5b;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: #0c0d0c;
+    z-index: 1;
+}
+
+    button[type="submit"] {
+        display: block;
+        background-color: #006c5b;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 10px auto 0;
+        
+         }
+    
+    button[type="submit"]:hover {
+        background-color: #4CAF50;
+    }
+    
+
+table {
+    width: calc(100% - 40px);
+    margin: 0 auto; 
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #006c5b;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Header styles for the edit XML page */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    margin: 0;
+}
+
+.header button {
+    margin-left: 20px;
+}
+
+/* Footer and top bar styles */
+.main-footer, .top-bar {
+    background-color: #006c5b;
+    color: white;
+    width: 100%;
+}
+
+.main-footer {
+    padding: 3px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar {
+    padding: 3px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.main-footer a, .top-bar a {
+    color: rgb(252, 248, 248);
+    text-decoration: none;
+    font-size: 12px;
+    padding: 3px;
+}
+
+.top-bar a {
+    margin-right: 20px;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.corporing {
+    padding: 4px;
+    font-size: 12px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.versao {
+    padding: 4px;
+    font-size: 12px;
+    text-align: right;
+    margin-right: 20px;
+}
+
